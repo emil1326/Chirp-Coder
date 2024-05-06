@@ -31,6 +31,7 @@
             Key = new TextBox();
             Input = new TextBox();
             Output = new TextBox();
+            DecodeCB = new CheckBox();
             SuspendLayout();
             // 
             // Key
@@ -46,6 +47,7 @@
             Input.Location = new Point(12, 12);
             Input.Multiline = true;
             Input.Name = "Input";
+            Input.ScrollBars = ScrollBars.Vertical;
             Input.Size = new Size(670, 207);
             Input.TabIndex = 1;
             Input.TextChanged += Input_TextChanged;
@@ -55,14 +57,27 @@
             Output.Location = new Point(12, 225);
             Output.Multiline = true;
             Output.Name = "Output";
+            Output.ScrollBars = ScrollBars.Vertical;
             Output.Size = new Size(670, 207);
             Output.TabIndex = 2;
+            // 
+            // DecodeCB
+            // 
+            DecodeCB.AutoSize = true;
+            DecodeCB.Location = new Point(688, 41);
+            DecodeCB.Name = "DecodeCB";
+            DecodeCB.Size = new Size(66, 19);
+            DecodeCB.TabIndex = 3;
+            DecodeCB.Text = "Decode";
+            DecodeCB.UseVisualStyleBackColor = true;
+            DecodeCB.CheckedChanged += DecodeCB_CheckedChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(DecodeCB);
             Controls.Add(Output);
             Controls.Add(Input);
             Controls.Add(Key);
@@ -77,5 +92,6 @@
         private TextBox Key;
         private TextBox Input;
         private TextBox Output;
+        private CheckBox DecodeCB;
     }
 }

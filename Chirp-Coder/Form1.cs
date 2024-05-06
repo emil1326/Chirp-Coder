@@ -7,26 +7,31 @@ namespace Chirp_Coder
             InitializeComponent();
         }
 
-        ChirperClass CC = new();
+        readonly ChirperClass CC = new();
 
         private void Input_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Input.Text))
+            if (string.IsNullOrEmpty(Input.Text.Trim()))
             {
 
-                return;
+                //return;
             }
-            if (string.IsNullOrEmpty(CC.KEY)) 
+            if (string.IsNullOrEmpty(CC.KEY.Trim()))
             {
 
-                return;
+                //return;
             }
-            Output.Text =
+            Output.Text = CC.ChirpIT(Input.Text.Trim());
         }
 
         private void Key_TextChanged(object sender, EventArgs e)
         {
             CC.KEY = Input.Text;
+        }
+
+        private void DecodeCB_CheckedChanged(object sender, EventArgs e)
+        {
+            CC.Decoding = DecodeCB.Checked;
         }
     }
 }
